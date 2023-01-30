@@ -37,5 +37,21 @@ class CheckNicknameView: BaseView {
         bgView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        nicknameTextfield.snp.makeConstraints {
+            $0.height.equalToSuperview().multipliedBy(0.2)
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(20)
+            $0.top.equalTo(bgView).multipliedBy(0.3)
+        }
+        
+        searchButton.snp.makeConstraints {
+            $0.snp.makeConstraints {
+                $0.top.equalTo(nicknameTextfield.snp.bottom).offset(20)
+                $0.width.equalToSuperview().multipliedBy(0.25)
+                $0.height.equalToSuperview().multipliedBy(0.1)
+                $0.centerX.equalToSuperview()
+            }
+        }
     }
 }
