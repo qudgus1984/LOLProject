@@ -155,6 +155,13 @@
 			path = AppCoordinator;
 			sourceTree = "<group>";
 		};
+		2FB591D72988F2A500D36DB2 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		2FB7E9522986C147005DC278 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +538,7 @@
 		496BDF722977E2BF00C4B0BC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2FB591D72988F2A500D36DB2 /* Protocol */,
 				496BDF872977E9D700C4B0BC /* ReusableProtocol */,
 				496BDF732977E2C600C4B0BC /* Extension */,
 			);
