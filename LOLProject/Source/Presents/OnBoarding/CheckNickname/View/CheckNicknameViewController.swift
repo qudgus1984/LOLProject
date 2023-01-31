@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import RxSwift
 
 class CheckNicknameViewController: BaseViewController {
     
     var mainview = CheckNicknameView()
+    
+    var viewModel = CheckNicknameViewModel()
     
     override func loadView() {
         self.view = mainview

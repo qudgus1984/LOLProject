@@ -16,10 +16,35 @@ class CheckNicknameView: BaseView {
         return view
     }()
     
+    private var lolLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.textColor = .green4
+        label.text = "LOL기장, LOL에 진심인 사람들을 위하여"
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private var nicknameIncludeView: UIView = {
+       let view = UIView()
+        view.backgroundColor = .green2
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 8
+        return view
+    }()
+    
     private var nicknameTextfield: UITextField = {
         let textfield = UITextField()
-        textfield.placeholder = "소환사 이름을 입력해주세요."
+        textfield.placeholder = " 소환사 이름을 입력해주세요. "
         return textfield
+    }()
+    
+    private var searchIncludeView: UIView = {
+        let view = UIView()
+         view.backgroundColor = .green2
+         view.clipsToBounds = true
+         view.layer.cornerRadius = 8
+         return view
     }()
     
     private var searchButton: UIButton = {
@@ -29,7 +54,7 @@ class CheckNicknameView: BaseView {
     }()
     
     override func configureUI() {
-        [bgView, nicknameTextfield, searchButton].forEach {
+        [bgView, lolLabel, nicknameIncludeView, nicknameTextfield, searchIncludeView, searchButton].forEach {
             addSubview($0)
         }
     }
@@ -38,19 +63,33 @@ class CheckNicknameView: BaseView {
             make.edges.equalToSuperview()
         }
         
-        nicknameTextfield.snp.makeConstraints {
-            $0.height.equalToSuperview().multipliedBy(0.2)
+        lolLabel.snp.makeConstraints {
+            $0.height.equalTo(120)
             $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(20)
-            $0.top.equalTo(bgView).multipliedBy(0.3)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.top.equalTo(bgView.snp.top).offset(80)
+        }
+        
+        nicknameIncludeView.snp.makeConstraints {
+            $0.height.equalTo(44)
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.top.equalTo(lolLabel.snp.bottom).offset(40)
+        }
+        
+        nicknameTextfield.snp.makeConstraints {
+            $0.edges.equalTo(nicknameIncludeView.snp.edges).inset(4)
+        }
+        
+        searchIncludeView.snp.makeConstraints {
+            $0.width.equalToSuperview().multipliedBy(0.25)
+            $0.height.equalToSuperview().multipliedBy(0.06)
+            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview()
         }
         
         searchButton.snp.makeConstraints {
-            $0.top.equalTo(nicknameTextfield.snp.bottom).offset(20)
-            $0.width.equalToSuperview().multipliedBy(0.25)
-            $0.height.equalToSuperview().multipliedBy(0.1)
-            $0.centerX.equalToSuperview()
-            
+            $0.edges.equalTo(searchIncludeView.snp.edges).inset(0)
         }
     }
 }
