@@ -33,13 +33,13 @@ class CheckNicknameView: BaseView {
         return view
     }()
     
-    private var nicknameTextfield: UITextField = {
+    internal var nicknameTextfield: UITextField = {
         let textfield = UITextField()
         textfield.placeholder = " 소환사 이름을 입력해주세요. "
         return textfield
     }()
     
-    private var searchIncludeView: UIView = {
+    internal var searchIncludeView: UIView = {
         let view = UIView()
          view.backgroundColor = .green2
          view.clipsToBounds = true
@@ -47,7 +47,7 @@ class CheckNicknameView: BaseView {
          return view
     }()
     
-    private var searchButton: UIButton = {
+    internal var searchButton: UIButton = {
         let button = UIButton()
         button.setTitle("검색", for: .normal)
         return button

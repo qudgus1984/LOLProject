@@ -11,6 +11,8 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configure()
     }
     
     deinit {
@@ -18,6 +20,10 @@ class BaseViewController: UIViewController {
     }
     
     func configure() {
+        
+    }
+    
+    func bind() {
         
     }
 }
