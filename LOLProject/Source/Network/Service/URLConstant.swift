@@ -8,5 +8,5 @@
 import Foundation
 
 struct URLConstant {
-    
+    static let BaseURL = "https://kr.api.riotgames.com"
 }
