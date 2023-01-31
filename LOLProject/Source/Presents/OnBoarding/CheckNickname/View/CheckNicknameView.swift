@@ -11,13 +11,13 @@ import SnapKit
 class CheckNicknameView: BaseView {
     
     private var bgView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = .green1
         return view
     }()
     
     private var nicknameTextfield: UITextField = {
-       let textfield = UITextField()
+        let textfield = UITextField()
         textfield.placeholder = "소환사 이름을 입력해주세요."
         return textfield
     }()
@@ -46,12 +46,11 @@ class CheckNicknameView: BaseView {
         }
         
         searchButton.snp.makeConstraints {
-            $0.snp.makeConstraints {
-                $0.top.equalTo(nicknameTextfield.snp.bottom).offset(20)
-                $0.width.equalToSuperview().multipliedBy(0.25)
-                $0.height.equalToSuperview().multipliedBy(0.1)
-                $0.centerX.equalToSuperview()
-            }
+            $0.top.equalTo(nicknameTextfield.snp.bottom).offset(20)
+            $0.width.equalToSuperview().multipliedBy(0.25)
+            $0.height.equalToSuperview().multipliedBy(0.1)
+            $0.centerX.equalToSuperview()
+            
         }
     }
 }
