@@ -14,6 +14,8 @@
 		2FE49E9D2977DD3F00C49841 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE49E9C2977DD3F00C49841 /* SceneDelegate.swift */; };
 		2FE49EA42977DD4000C49841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FE49EA32977DD4000C49841 /* Assets.xcassets */; };
 		2FE49EA72977DD4000C49841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FE49EA52977DD4000C49841 /* LaunchScreen.storyboard */; };
+		2FF7696A298A4E3400FA7354 /* AppCoordinatorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF76969298A4E3400FA7354 /* AppCoordinatorContext.swift */; };
+		2FF7696C298A50E600FA7354 /* CheckNicknameContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF7696B298A50E600FA7354 /* CheckNicknameContext.swift */; };
 		49009DF62977DF14001F7ABF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49009DF52977DF14001F7ABF /* MainViewController.swift */; };
 		49009DF82977DF8F001F7ABF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 49009DF72977DF8F001F7ABF /* .gitignore */; };
 		4930CB9C2981231F0012974F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930CB9B2981231F0012974F /* UIColor+Extension.swift */; };
@@ -79,6 +81,8 @@
 		2FE49E9C2977DD3F00C49841 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2FE49EA32977DD4000C49841 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FE49EA62977DD4000C49841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2FF76969298A4E3400FA7354 /* AppCoordinatorContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorContext.swift; sourceTree = "<group>"; };
+		2FF7696B298A50E600FA7354 /* CheckNicknameContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNicknameContext.swift; sourceTree = "<group>"; };
 		49009DF52977DF14001F7ABF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		49009DF72977DF8F001F7ABF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		4930CB9B2981231F0012974F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				2FB7E9502986C13D005DC278 /* AppCoordinator.swift */,
+				2FF76969298A4E3400FA7354 /* AppCoordinatorContext.swift */,
 			);
 			path = AppCoordinator;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				4930CC05298246580012974F /* CheckNicknameCoordinator.swift */,
+				2FF7696B298A50E600FA7354 /* CheckNicknameContext.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -705,7 +711,9 @@
 				4930CBE229823C640012974F /* NetworkMonitor.swift in Sources */,
 				4930CC1F29824C840012974F /* RealmModel.swift in Sources */,
 				4930CC14298246C10012974F /* InputNicknameView.swift in Sources */,
+				2FF7696C298A50E600FA7354 /* CheckNicknameContext.swift in Sources */,
 				4930CBC829813F120012974F /* CalendarViewModel.swift in Sources */,
+				2FF7696A298A4E3400FA7354 /* AppCoordinatorContext.swift in Sources */,
 				4930CBF8298244CB0012974F /* ChampRankCell.swift in Sources */,
 				4930CBFC298245A30012974F /* GameRecordCell.swift in Sources */,
 				4930CBF4298242840012974F /* Repository.swift in Sources */,

@@ -11,15 +11,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    lazy var appCoordinator: AppCoordinator = AppCoordinator(window: self.window!)
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let scene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.windowScene = scene
+        window = UIWindow(windowScene: scene)
         
-        let vc = CheckNicknameViewController()
-        window?.rootViewController = vc
-        window?.makeKeyAndVisible()
+        appCoordinator.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
