@@ -7,33 +7,31 @@
 
 import UIKit
 
-protocol CheckNicknameCoordinatorDelegate {
-    func didSearchButtonClicked(_ coordinator: CheckNicknameCoordinator)
+class CheckNicknameCoordinator: Coordinator {
+    private var window: UIWindow
+
+    var delegate: CoordinatorDidFinishDelegate?
+
+    var presenter: UINavigationController
+
+    var childCoordinators: [Coordinator] = []
+
+    private var navigationController: UINavigationController!
+
+    /// initialziation
+    init(window: UIWindow) {
+        self.window = window
+        self.childCoordinators = []
+        self.presenter = UINavigationController()
+    }
+
+    func start(animated: Bool = true) {
+        let viewcontroller = CheckNicknameViewController()
+        viewcontroller.coordinator = self
+        viewcontroller.coordinatorDelegate = self
+        window.rootViewController = viewcontroller
+    }
 }
 
-class CheckNicknameCoordinator: Coordinator, CheckNicknameViewControllerDelegate {
-//    var delegate: CoordinatorDidFinishDelegate?
-//
-//    var presenter: UINavigationController
-//
-//
-//    var childCoordinators: [Coordinator] = []
-//    var checkDelegate: CheckNicknameCoordinatorDelegate?
-//
-//    private var navigationController: UINavigationController!
-//
-//    init(navigationController: UINavigationController) {
-//        self.navigationController = navigationController
-//    }
-//
-//    func start(animated: Bool) {
-//        let viewController = CheckNicknameViewController()
-//        viewController.delegate = self
-//
-//        self.navigationController.viewControllers = [viewController]
-//    }
-//
-//    func check() {
-//        self.checkDelegate?.didSearchButtonClicked(self)
-//    }
-}
+// MARK: App
+extension CheckNicknameCoordinator : AppCoordinatorContext { }

@@ -9,16 +9,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-protocol CheckNicknameViewControllerDelegate {
-    func check()
-}
 
 class CheckNicknameViewController: BaseViewController {
     
     var mainview = CheckNicknameView()
     var viewModel = CheckNicknameViewModel()
-    var delegate: CheckNicknameViewControllerDelegate?
-    let disposeBag = DisposeBag()
+    
+    // variable
+    weak var coordinator: CheckNicknameCoordinator?
     
     override func loadView() {
         self.view = mainview

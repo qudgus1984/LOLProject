@@ -8,6 +8,12 @@
 import UIKit
 
 final class AppCoordinator: Coordinator {
+    
+    enum InitalViewType {
+        case nickname
+        case main
+    }
+    
     var delegate: CoordinatorDidFinishDelegate?
     
     var presenter: UINavigationController
@@ -23,6 +29,27 @@ final class AppCoordinator: Coordinator {
     }
     
     func start(animated: Bool = true) {
-        print("여기서 앱 시작했을 때 처리")
+        showInitialView(with: .nickname)
+    }
+    
+    func showInitialView(with type: InitalViewType) {
+        presenter = UINavigationController()
+        
+        switch type {
+        case .nickname:
+            showCheck(window: window)
+        case .main:
+            print("main")
+        }
+        
+        self.window.makeKeyAndVisible()
+
+        UIView.transition(with: self.window,
+                          duration: 0.5,
+                          options: .transitionCrossDissolve,
+                          animations: nil,
+                          completion: nil)
     }
 }
+
+extension AppCoordinator: CheckNicknameCoordinatorContext { }
