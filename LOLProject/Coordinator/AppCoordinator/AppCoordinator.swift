@@ -4,13 +4,13 @@
 //
 //  Created by 이병현 on 2023/01/29.
 //
-
 import UIKit
 
 final class AppCoordinator: Coordinator {
     
     enum InitalViewType {
-        case nickname
+        case checkNickname
+        case inputNickname
         case main
     }
     
@@ -29,15 +29,17 @@ final class AppCoordinator: Coordinator {
     }
     
     func start(animated: Bool = true) {
-        showInitialView(with: .nickname)
+        showInitialView(with: .checkNickname)
     }
     
     func showInitialView(with type: InitalViewType) {
         presenter = UINavigationController()
         
         switch type {
-        case .nickname:
+        case .checkNickname:
             showCheck(window: window)
+        case .inputNickname:
+            print("inputNickname")
         case .main:
             print("main")
         }

@@ -9,6 +9,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol CheckNicknameControllerDelegate {
+    func checkNickname()
+}
 
 class CheckNicknameViewController: BaseViewController {
     
@@ -17,6 +20,8 @@ class CheckNicknameViewController: BaseViewController {
     
     // variable
     weak var coordinator: CheckNicknameCoordinator?
+    
+    var delegate: CheckNicknameControllerDelegate?
     
     override func loadView() {
         self.view = mainview
@@ -54,5 +59,6 @@ class CheckNicknameViewController: BaseViewController {
     func success() {
         guard let text = mainview.nicknameTextfield.text else { return }
         viewModel.successNickname(nickname: text)
+        self.delegate?.checkNickname()
     }
 }
